@@ -1,0 +1,68 @@
+/* Wrapper อยู่กลางหน้าจอ */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 16px; /* กันชนขอบหน้าจอเล็ก */
+  box-sizing: border-box;
+}
+
+.card-wrapper {
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+/* การ์ดหลักน้ำตาล */
+.card {
+  background-color: #a0522d;
+  color: white;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+/* การ์ดขยาย */
+.card-expand {
+  background-color: #ffffff;
+  border: 5px solid #d7ac80;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+/* Responsive สำหรับ tablet / iPad */
+@media (max-width: 1024px) {
+  .card-wrapper {
+    height: 180px;
+  }
+  .card {
+    width: 80vw; /* ใช้ตามความกว้างหน้าจอ */
+  }
+  .card-expand {
+    /* ส่วนขยายสูงสุดไม่เกิน 40vw */
+    width: calc(var(--card-width, 80vw) + 40vw);
+  }
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+  .card-wrapper {
+    height: 160px;
+  }
+  .card {
+    width: 90vw;
+  }
+  .card-expand {
+    width: calc(var(--card-width, 90vw) + 30vw);
+  }
+}

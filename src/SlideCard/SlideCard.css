@@ -1,0 +1,40 @@
+.wrapper {
+  width: 700px;
+  overflow: hidden;
+}
+
+.wrapper.open {
+  width: 1000px; /* เพิ่มพื้นที่ด้านขวา */
+  background-color: aqua;
+}
+
+.card {
+  display: flex;
+  width: 1000px;
+  transition: transform 0.5s ease;
+}
+
+.card.open {
+  transform: translateX(-300px);
+}
+
+.image {
+  width: 700px;
+  height: 400px;
+  background: #d2b48c;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  width: 300px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
